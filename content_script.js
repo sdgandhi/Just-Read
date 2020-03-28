@@ -1220,7 +1220,7 @@ function createSimplifiedOverlay() {
     selected = pageSelectedContainer;
 
     // Get the title, author, etc.
-    container.appendChild(addArticleMeta())
+    // container.appendChild(addArticleMeta())
 
     // Set the text as our text
     var contentContainer = document.createElement("div");
@@ -1314,7 +1314,7 @@ function createSimplifiedOverlay() {
     };
 
     // Add small bit of info about our extension
-    container.appendChild(addExtInfo());
+    // container.appendChild(addExtInfo());
 
     // Add our iframe to the page
     document.body.appendChild(simpleArticle);
@@ -1353,13 +1353,6 @@ function createSimplifiedOverlay() {
     uiContainer.appendChild(addUndoButton());
 
     container.appendChild(uiContainer);
-
-    // Add the notification of premium if necessary
-    if((jrCount === 5
-    || jrCount % 15 === 0)
-    && jrCount < 151) {
-        container.appendChild(addPremiumNofifier());
-    }
 
     // Add MathJax support
     var mj = document.querySelector("script[src *= 'mathjax");

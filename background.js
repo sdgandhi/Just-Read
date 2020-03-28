@@ -30,7 +30,7 @@ function startJustRead(tab) {
 
     setTimeout(function() {
         chrome.browserAction.setBadgeText({text:""});
-    }, 2000);
+    }, 1000);
 }
 
 function startSelectText() {
@@ -235,38 +235,39 @@ chrome.contextMenus.create({
 });
 
 // Create an entry to give information about the premium version
-chrome.contextMenus.create({
-    title: "Get Just Read Premium",
-    contexts: ["browser_action"],
-    onclick: function() {
-        window.open('https://justread.link', '_blank');
-    }
-});
+// chrome.contextMenus.create({
+//     title: "Get Just Read Premium",
+//     contexts: ["browser_action"],
+//     onclick: function() {
+//         window.open('https://justread.link', '_blank');
+//     }
+// });
 
-chrome.tabs.onUpdated.addListener( function (tabId, changeInfo, tab) {
-    if (changeInfo.status === 'complete') {
-        // Auto enable on sites specified
-        chrome.storage.sync.get('auto-enable-site-list', function (siteListObj) {
-            var siteList;
-            if(siteListObj) {
-                siteList = siteListObj['auto-enable-site-list'];
-                var url = tab.url;
+// Disable to remove "tabs" permission.
+// chrome.tabs.onUpdated.addListener( function (tabId, changeInfo, tab) {
+//     if (changeInfo.status === 'complete') {
+//         // Auto enable on sites specified
+//         chrome.storage.sync.get('auto-enable-site-list', function (siteListObj) {
+//             var siteList;
+//             if(siteListObj) {
+//                 siteList = siteListObj['auto-enable-site-list'];
+//                 var url = tab.url;
 
-                if(typeof siteList !== "undefined") {
-                    for(var i = 0; i < siteList.length; i++) {
-                        var regex = new RegExp(siteList[i], "i");
+//                 if(typeof siteList !== "undefined") {
+//                     for(var i = 0; i < siteList.length; i++) {
+//                         var regex = new RegExp(siteList[i], "i");
 
-                        if( url.match( regex ) ) {
-                            chrome.tabs.executeScript(tabId, {
-                                code: 'var runOnLoad = true;' // Ghetto way of signaling to run on load
-                            }, function() {                   // instead of using Chrome messages
-                                startJustRead(tab);
-                            });
-                            return;
-                        }
-                    }
-                }
-            }
-        });
-    }
-});
+//                         if( url.match( regex ) ) {
+//                             chrome.tabs.executeScript(tabId, {
+//                                 code: 'var runOnLoad = true;' // Ghetto way of signaling to run on load
+//                             }, function() {                   // instead of using Chrome messages
+//                                 startJustRead(tab);
+//                             });
+//                             return;
+//                         }
+//                     }
+//                 }
+//             }
+//         });
+//     }
+// });

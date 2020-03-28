@@ -10,12 +10,6 @@
     "default_title": "Just Read"
   },
 
-  "browser_specific_settings": {
-    "gecko": {
-      "id": "{cb2b337b-99d7-4b86-aa04-84a6f5c3e218}"
-    }
-  },
-
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
@@ -60,8 +54,7 @@
   ],
 
   "permissions": [
-    "tabs",
-    "*://*/*",
+    "activeTab",
     "contextMenus",
     "storage"
   ]

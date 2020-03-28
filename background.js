@@ -44,7 +44,7 @@ function startSelectText() {
 function createPageCM() {
     // Create a right click menu option
     pageCMId = chrome.contextMenus.create({
-         title: "View this page using Just Read",
+         title: "View this page using Desya",
          id: "pageCM",
          contexts: ["page"],
          onclick: startJustRead
@@ -53,7 +53,7 @@ function createPageCM() {
 function createHighlightCM() {
     // Create an entry to allow user to use currently selected text
     highlightCMId = chrome.contextMenus.create({
-        title: "View this selection in Just Read",
+        title: "View this selection in Desya",
         id: "highlightCM",
         contexts:["selection"],
         onclick: function(info, tab) {
@@ -68,7 +68,7 @@ function createHighlightCM() {
 function createLinkCM() {
     // Create an entry to allow user to open a given link using Just read
     linkCMId = chrome.contextMenus.create({
-        title: "View the linked page using Just Read",
+        title: "View the linked page using Desya",
         id: "linkCM",
         contexts:["link"],
         onclick: function(info, tab) {
@@ -89,7 +89,7 @@ function createLinkCM() {
 function createAutorunCM() {
     // Create an entry to allow user to open a given link using Just read
     autorunCMId = chrome.contextMenus.create({
-        title: "Add this site to Just Read' auto-run list",
+        title: "Add this site to Desya' auto-run list",
         id: "autorunCM",
         contexts:["page"],
         onclick: addSiteToAutorunList
@@ -120,7 +120,7 @@ function addSiteToAutorunList(info, tab) {
                     }
                 });
             } else {
-                console.log("Entry already exists inside of Just Read's auto-run list. Not adding new entry.")
+                console.log("Entry already exists inside of Desya's auto-run list. Not adding new entry.")
             }
         } else {
             chrome.storage.sync.set({ 'auto-enable-site-list': [entry] });
@@ -236,7 +236,7 @@ chrome.contextMenus.create({
 
 // Create an entry to give information about the premium version
 // chrome.contextMenus.create({
-//     title: "Get Just Read Premium",
+//     title: "Get Desya Premium",
 //     contexts: ["browser_action"],
 //     onclick: function() {
 //         window.open('https://justread.link', '_blank');

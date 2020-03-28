@@ -1,13 +1,12 @@
 {
-  "name": "Just Read",
-  "version": "2.2.5",
+  "name": "Desya",
+  "version": "1.0.0",
   "manifest_version": 2,
-  "description": "A feature-packed, customizable reader extension.",
-  "homepage_url": "https://github.com/ZachSaucier/Just-Read",
+  "description": "Clean up webpages to focus on the content.",
 
   "browser_action": {
     "default_icon": "icons/icon19.png",
-    "default_title": "Just Read"
+    "default_title": "Desya"
   },
 
   "icons": {
@@ -21,13 +20,13 @@
       "suggested_key": {
         "default": "Ctrl+Shift+L"
       },
-      "description": "Open the Just Read format for the current page"
+      "description": "Open the Desya format for the current page"
     },
     "select-text": {
       "suggested_key": {
         "default": "Ctrl+Shift+K"
       },
-      "description": "Enable user text selection mode using Just Read"
+      "description": "Enable user text selection mode using Desya"
     }
   },
 
@@ -49,8 +48,7 @@
     "hide-segments.css",
     "page.css",
     "options.js",
-    "options.css",
-    "fonts/*"
+    "options.css"
   ],
 
   "permissions": [
